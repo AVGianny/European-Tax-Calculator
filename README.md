@@ -42,11 +42,11 @@ Check out the live demo here: X
 
 ## 🖥️ Screenshots
 
-![Screenshot 1]
-*Main Interface*  
+*Main Interface*
+![Main Interface](https://i.ibb.co/dPyrgcX/600x800-main.png)
 
-![Screenshot 2]
-*VAT Calculation Results*  
+*VAT Calculation Results* 
+![VAT Calculation Results](https://i.ibb.co/HNnr6Mm/600x800-calc.png)
 
 ---
 
