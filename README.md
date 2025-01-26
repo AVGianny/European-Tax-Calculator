@@ -36,7 +36,7 @@ The calculator dynamically computes:
 
 ## 🚀 Live Demo
 
-Check out the live demo here: X
+Check out the live demo here: [🔗 European Tax Calculator on Web](https://avgianny.github.io/European-Tax-Calculator/)
 
 ---
 
