@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>European VAT Calculator 2025</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .header img {
+            width: 120px; /* Adjusted size */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 1rem;
+        }
+
+        .header h1 {
+            color: #333;
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .header p {
+            color: #777;
+            margin: 0.5rem 0 0;
+            font-size: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        select:focus, input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .result {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .result h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .result p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .branding {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .branding h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .branding p {
+            margin: 0.5rem 0 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <!-- Header with Logo and Tagline -->
+    <div class="header">
+        <img src="https://i.ibb.co/0Jhcv6C/468ab086cae2c12ed4893468d0407825.png" alt="AVServices Logo">
+        <h1>European VAT Calculator</h1>
+        <p>Accurate VAT Calculations for 2025</p>
+    </div>
+
+    <!-- Branding Section -->
+    <div class="branding">
+        <h2>Calculate VAT with Ease</h2>
+        <p>Trusted by businesses across Europe</p>
+    </div>
+
+    <!-- Calculator Form -->
+    <label for="country">Select Country:</label>
+    <select id="country">
+        <option value="20">Austria (20%)</option>
+        <option value="21">Belgium (21%)</option>
+        <option value="20">Bulgaria (20%)</option>
+        <option value="25">Croatia (25%)</option>
+        <option value="19">Cyprus (19%)</option>
+        <option value="25">Denmark (25%)</option>
+        <option value="22">Estonia (22%)</option>
+        <option value="25.5">Finland (25.5%)</option>
+        <option value="20">France (20%)</option>
+        <option value="19">Germany (19%)</option>
+        <option value="24">Greece (24%)</option>
+        <option value="27">Hungary (27%)</option>
+        <option value="23">Ireland (23%)</option>
+        <option value="22">Italy (22%)</option>
+        <option value="21">Latvia (21%)</option>
+        <option value="21">Lithuania (21%)</option>
+        <option value="17">Luxembourg (17%)</option>
+        <option value="18">Malta (18%)</option>
+        <option value="21">Netherlands (21%)</option>
+        <option value="23">Poland (23%)</option>
+        <option value="23">Portugal (23%)</option>
+        <option value="19">Romania (19%)</option>
+        <option value="23">Slovakia (23%)</option>
+        <option value="22">Slovenia (22%)</option>
+        <option value="21">Spain (21%)</option>
+        <option value="25">Sweden (25%)</option>
+        <option value="20">United Kingdom (20%)</option>
+    </select>
+
+    <label for="income">Amount (€):</label>
+    <input type="number" id="income" placeholder="Enter the amount">
+
+    <button onclick="calculateVAT()">Calculate VAT</button>
+
+    <!-- Result Section -->
+    <div class="result" id="result">
+        <h3>VAT Breakdown</h3>
+        <p>Amount: <span id="amount">€0.00</span></p>
+        <p>VAT Rate: <span id="vatRate">0%</span></p>
+        <p>VAT Amount: <span id="vatAmount">€0.00</span></p>
+        <p>Total (Incl. VAT): <span id="totalAmount">€0.00</span></p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Disclaimer: This calculator uses standard VAT rates for 2025. Reduced or super-reduced rates may apply to specific goods or services.</p>
+        <p>Made with ❤️ by <strong>Gianny from AVServices</strong></p>
+    </div>
+</div>
+
+<script>
+    function calculateVAT() {
+        const country = document.getElementById('country').value;
+        const incomeInput = document.getElementById('income').value;
+        const income = parseFloat(incomeInput) || 0; // Default to 0 if no amount is entered
+        const vatRate = parseFloat(country) / 100;
+
+        const vatAmount = income * vatRate;
+        const totalAmount = income + vatAmount;
+
+        // Update the result section
+        document.getElementById('amount').innerText = `€${income.toFixed(2)}`;
+        document.getElementById('vatRate').innerText = `${(vatRate * 100).toFixed(2)}%`;
+        document.getElementById('vatAmount').innerText = `€${vatAmount.toFixed(2)}`;
+        document.getElementById('totalAmount').innerText = `€${totalAmount.toFixed(2)}`;
+    }
+</script>
+
+</body>
+</html>
