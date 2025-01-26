@@ -43,10 +43,14 @@ Check out the live demo here: X
 ## 🖥️ Screenshots
 
 *Main Interface*
-![Main Interface](https://i.ibb.co/dPyrgcX/600x800-main.png)
+
+![Main Interface
+](https://i.imghippo.com/files/sb6493VY.png)
 
 *VAT Calculation Results* 
-![VAT Calculation Results](https://i.ibb.co/HNnr6Mm/600x800-calc.png)
+
+![VAT Calculation Results
+](https://i.imghippo.com/files/udSu5172As.png)
 
 ---
 
